@@ -1,0 +1,12 @@
+name: 'Build the Documentation'
+description: 'Builds the specified documentation targets and saves the result as an artifact'
+inputs:
+  targets:
+    description: 'Documentation targets to be built (html, latexpdf)'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.targets }}
