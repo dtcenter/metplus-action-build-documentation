@@ -4,22 +4,20 @@ repository=${GITHUB_REPOSITORY}
 ref=${GITHUB_REF}
 tag=`basename ${ref}`
 event_name=${GITHUB_EVENT_NAME}
-dl_filename=`basename ${repository}`-`echo ${tag} | sed -r 's/^v//g'`
-cs_tar_filename=checksum_tar.txt
-cs_zip_filename=checksum_zip.txt
+html_tar_filename=${repository}/docs/_build/docs_html.tar.gz
+pdf_tar_filename=${repository}/docs/_build/docs_pdf.tar.gz
 
 echo GitHub repository: ${repository}
 echo GitHub ref: ${ref}
 echo GitHub event_name: ${event_name}
 
-if [ "$event_name" != "release" ]; then
-    echo "Triggering event must be release!"
-    exit 1
-fi
+###
+# build the docs
+###
 
-###
-# create checksum
-###
+exit 0
+
+# TODO: Update the actual content here
 
 # download the assets containing the source code - zip and tar gz
 echo curl -LJO https://github.com/${repository}/archive/${ref}.zip

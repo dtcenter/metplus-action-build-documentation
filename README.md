@@ -1,22 +1,32 @@
 # metplus-action-build-documentation
-Build Sphinx-based documentation
+Build Sphinx-based documentation. Report bad status for any documentation build errors or warnings.
 
-## Inputs - Required
+# Environment
+
+This action runs within the `dtcenter/metplus-envs:metplus-action-build-documentation` environment.
+The following commands were run to create it:
+```
+docker build -t dtcenter/metplus-envs:metplus-action-build-documentation -f Dockerfile.env .
+docker push dtcenter/metplus-envs:metplus-action-build-documentation
+```
+
+## Inputs - Optional 
 
 ## `targets`
 
 Space-separated list of targets (`html`, `latexpdf`)
+Default is `html`.
 
 ## Outputs
 
-None.
+The documents rendered as `html` and/or `latexpdf` are uploaded as artifacts.
 
 ## Example usage
 
 Create a new workflow YAML file in .github/workflows and add the following:
 
 ```
-name: Add checksum to release
+name: Documentation
 
 on:
   pull_request:

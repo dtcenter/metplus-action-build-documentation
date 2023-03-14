@@ -1,5 +1,5 @@
 name: 'Build the Documentation'
-description: 'Builds the specified documentation targets and saves the result as an artifact'
+description: 'Builds the specified documentation targets and saves the result(s) as artifacts'
 inputs:
   targets:
     description: 'Documentation targets to be built (html, latexpdf)'
