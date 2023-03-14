@@ -11,19 +11,22 @@ echo GitHub repository: ${repository}
 echo GitHub ref: ${ref}
 echo GitHub event_name: ${event_name}
 
+echo #########
 echo current_dir: `pwd`
-echo environment:
+echo #########
+echo ls: `ls`
+echo #########
+echo environment: `printenv`
 printenv
+echo #########
 
 ###
 # build the docs
 ###
 
-cd ${GITHUB_WORKSPACE}/docs
+cd docs
 
-ls
+make clean ${INPUT_TARGETS}
 
 exit 0
-
-# TODO: Update the actual content here
 
