@@ -10,7 +10,10 @@ pdf_tar_filename=${repository}/docs/_build/docs_pdf.tar.gz
 echo GitHub repository: ${repository}
 echo GitHub ref: ${ref}
 echo GitHub event_name: ${event_name}
-echo Documentation Targets: ${targets}
+
+echo current_dir: `pwd`
+echo environment:
+printenv
 
 ###
 # build the docs
