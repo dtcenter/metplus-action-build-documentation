@@ -42,6 +42,7 @@ jobs:
   documentation:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: dtcenter/metplus-action-build-documentation@v1
         with:
           targets: 'html latexpdf'
