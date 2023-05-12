@@ -45,6 +45,12 @@ function run_command() {
 }
 
 ###
+# install requirements, as needed
+###
+
+run_command "python -m pip install --exists-action=w --no-cache-dir -r docs/requirements.txt"
+
+###
 # build the docs
 ###
 
