@@ -43,9 +43,9 @@ function run_command() {
 # build the docs
 ###
 
-run_command cd docs
+run_command "cd docs"
 
-run_command make clean ${INPUT_TARGETS}
+run_command "make clean ${INPUT_TARGETS}"
 
 exit 0
 
