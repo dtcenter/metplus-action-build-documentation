@@ -20,13 +20,32 @@ echo environment: `printenv`
 printenv
 echo #########
 
+# Sub-routine for running a command and checking return status
+function run_command() {
+
+  # Print the command being called
+  echo "CALLING: $1"
+
+  # Run the command and store the return status
+  $1
+  STATUS=$?
+        
+  # Check return status
+  if [[ ${STATUS} -ne 0 ]]; then
+     echo "ERROR: Command returned with non-zero status ($STATUS): $1"
+     exit ${STATUS}
+  fi
+
+  return ${STATUS}
+}
+
 ###
 # build the docs
 ###
 
-cd docs
+run_command cd docs
 
-make clean ${INPUT_TARGETS}
+run_command make clean ${INPUT_TARGETS}
 
 exit 0
 
