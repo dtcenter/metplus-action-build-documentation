@@ -1,6 +1,4 @@
-FROM alpine:latest
-
-RUN apk add --update --no-cache curl
+FROM dtcenter/metplus-envs:metplus-action-build-documentation
 
 COPY entrypoint.sh /entrypoint.sh
 
