@@ -1,5 +1,10 @@
 #! /bin/sh
 
+# If not otherwise set, build html
+if [ -z ${INPUT_TARGETS+x} ]; then
+  INPUT_TARGETS="html";
+fi 
+
 repository=${GITHUB_REPOSITORY}
 ref=${GITHUB_REF}
 tag=`basename ${ref}`
